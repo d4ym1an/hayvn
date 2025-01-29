@@ -49,6 +49,54 @@ document.getElementById('close-art').addEventListener('click', function(event) {
     }, 500); // Match the transition duration
 });
 
+document.querySelector('.commissions').addEventListener('click', function() {
+    const commissionsSection = document.getElementById('commissions');
+    commissionsSection.style.display = 'block';
+    setTimeout(() => {
+        commissionsSection.style.opacity = '1'; // Set opacity to 1 to trigger transition
+    }, 10); // Slight delay to trigger the transition
+});
+
+document.getElementById('close-commissions').addEventListener('click', function(event) {
+    event.preventDefault();
+    const commissionsSection = document.getElementById('commissions');
+    commissionsSection.style.opacity = '0'; // Set opacity to 0 to trigger transition
+    setTimeout(() => {
+        commissionsSection.style.display = 'none';
+    }, 500); // Match the transition duration
+});
+
+document.querySelector('.faq').addEventListener('click', function() {
+    const faqSection = document.getElementById('faq');
+    faqSection.style.display = 'block';
+    setTimeout(() => {
+        faqSection.style.opacity = '1'; // Set opacity to 1 to trigger transition
+    }, 10); // Slight delay to trigger the transition
+});
+
+document.getElementById('close-faq').addEventListener('click', function(event) {
+    event.preventDefault();
+    const faqSection = document.getElementById('faq');
+    faqSection.style.opacity = '0'; // Set opacity to 0 to trigger transition
+    setTimeout(() => {
+        faqSection.style.display = 'none';
+    }, 500); // Match the transition duration
+});
+
+document.querySelector('.work').addEventListener('click', function(event) {
+    event.preventDefault();
+    const commissionsSection = document.getElementById('commissions');
+    const artSection = document.getElementById('art');
+    commissionsSection.style.opacity = '0'; // Set opacity to 0 to trigger transition
+    setTimeout(() => {
+        commissionsSection.style.display = 'none';
+        artSection.style.display = 'flex';
+        setTimeout(() => {
+            artSection.style.opacity = '1'; // Set opacity to 1 to trigger transition
+        }, 10); // Slight delay to trigger the transition
+    }, 500); // Match the transition duration
+});
+
 document.querySelectorAll('#art img').forEach(img => {
     img.addEventListener('click', function() {
         const overlay = document.createElement('div');
